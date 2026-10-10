@@ -1,0 +1,122 @@
+@font-face {
+  font-family: 'oswald';
+  src: url('./assets/oswald-v57-latin-regular.woff2');
+}
+
+:root {
+  --clr-dominant: #101010;
+  --clr-secondary: #c8102e;
+  --text-clr: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-clr);
+  font-family: 'oswald';
+}
+
+body {
+  background-color: var(--clr-dominant);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+header, footer {
+  background-color: var(--clr-secondary);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+header {
+  flex-direction: column;
+  padding: 12px;
+}
+
+header p {
+  color: rgb(255 255 255 / 0.85);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.scoreboard p, .card {
+  background-color: #242424;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  text-transform: uppercase;
+  font-weight: 600;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.4);
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgb(200 16 46 / 0.3);
+  cursor: pointer;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 16px;
+}
+
+.scoreboard p {
+  gap: 4px;
+  width: 66px;
+}
+
+.scoreboard p:first-child {
+  border: 1px solid #C8102E;
+}
+
+.scoreboard p:nth-child(n+2) {
+  border: 1px solid #D4AF37;
+}
+
+.scoreboard p {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.gold {
+  color: #D4AF37;
+}
+
+.card img {
+  width: auto;
+  height: 300px;
+}
+
+footer {
+  padding: 6px;
+  line-height: 1;
+  font-size: 0.8125rem;
+  gap: 4px;
+  justify-content: center;
+}
+
+@media (min-width: 767px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 230px);
+  }
+}
